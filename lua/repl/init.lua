@@ -77,7 +77,7 @@ local function open_windows()
     relativenumber = false,
     winfixheight = true,
     modifiable = false,
-    filetype = 'SpaceVimREPL',
+    filetype = 'repl-nvim',
   })
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'q', '', {
     callback = close,
