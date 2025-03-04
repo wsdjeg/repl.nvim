@@ -8,7 +8,7 @@
 
 local job = require('repl.job')
 local util = require('repl.utils')
-local spi = require('spacevim.api.unicode.spinners')
+local spi = require('repl.spinners')
 
 
 local lines = 0
