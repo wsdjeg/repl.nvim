@@ -172,6 +172,10 @@ local function start(exe)
 end
 
 function M.start(ft)
+  if not ft or #ft == 0 then
+    vim.api.nvim_echo({ { 'filetype is empty!', 'WarningMsg' } }, false, {})
+    return
+  end
   local exe = exes[ft] or ''
   if exe ~= '' then
     start(exe)
