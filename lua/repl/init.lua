@@ -163,6 +163,7 @@ local function start(exe)
         on_stderr = on_stderr,
         on_exit = on_exit,
     })
+    log.info(string.format('repl jobid: %s', job_id))
     if job_id > 0 then
         spi.apply('dot1', function(v)
             repl_spinners = v
