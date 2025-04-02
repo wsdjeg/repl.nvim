@@ -6,15 +6,18 @@ use your favorite plugin manager, for example: [nvim-plug](https://github.com/ws
 
 ```lua
 require('plug').add({
-  {
-    'wsdjeg/repl.nvim',
-    config = function()
-      require('repl').setup({
-        executables = {
-          lua = 'lua',
+    {
+        'wsdjeg/repl.nvim',
+        config = function()
+            require('repl').setup({
+                executables = {
+                    lua = 'lua',
+                },
+            })
+        end,
+        depends = {
+            { 'wsdjeg/job.nvim' },
         },
-      })
-    end,
-  },
+    },
 })
 ```

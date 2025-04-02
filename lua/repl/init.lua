@@ -6,7 +6,7 @@
 -- License: GPLv3
 --=============================================================================
 
-local job = require('repl.job')
+local job = require('job')
 local util = require('repl.utils')
 local spi = require('repl.spinners')
 local log = require('repl.logger')
@@ -96,6 +96,7 @@ local function open_windows()
 end
 
 local function on_stdout(_, data)
+    vim.print(data)
     if vim.api.nvim_buf_is_valid(bufnr) then
         vim.api.nvim_buf_set_option(bufnr, 'modifiable', true)
         vim.api.nvim_buf_set_lines(bufnr, lines, lines + 1, false, data)
