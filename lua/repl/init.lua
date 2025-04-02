@@ -10,7 +10,6 @@ local job = require('repl.job')
 local util = require('repl.utils')
 local spi = require('repl.spinners')
 
-
 local lines = 0
 local bufnr = -1
 local winid = -1
@@ -210,6 +209,15 @@ end
 
 function M.reg(ft, execute)
   exes[ft] = execute
+end
+
+function M.setup(opt)
+  opt = opt or {}
+
+  local executables = opt.executables or {}
+  for ft, runner in pairs(executables) do
+    exes[ft] = runner
+  end
 end
 
 function M.status()
